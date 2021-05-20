@@ -5,5 +5,9 @@ class Track::Maintainership < ApplicationRecord
     foreign_key: :user_id,
     inverse_of: :maintainerships
 
-  enum type: { track: 0, polyglot: 1 }
+  enum maintainer_type: { regular: 0, polyglot: 1 }, _suffix: :maintainer
+
+  def maintainer_type
+    super.to_sym
+  end
 end

@@ -454,7 +454,7 @@ ActiveRecord::Schema.define(version: 2021_05_20_080210) do
     t.bigint "track_id", null: false
     t.bigint "user_id", null: false
     t.boolean "visible", default: true, null: false
-    t.integer "type", limit: 1, null: false
+    t.integer "maintainer_type", limit: 1, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["track_id", "user_id"], name: "uniq", unique: true

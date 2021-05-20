@@ -6,6 +6,6 @@ FactoryBot.define do
 
     maintainer { create :user }
     visible { true }
-    type { :track }
+    maintainer_type { :regular }
   end
 end

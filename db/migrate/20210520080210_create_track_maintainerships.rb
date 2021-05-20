@@ -4,7 +4,7 @@ class CreateTrackMaintainerships < ActiveRecord::Migration[6.1]
       t.belongs_to :track, foreign_key: true, null: false
       t.belongs_to :user, foreign_key: true, null: false      
       t.boolean :visible, null: false, default: true
-      t.column :type, :tinyint, null: false
+      t.column :maintainer_type, :tinyint, null: false
 
       t.timestamps
 
