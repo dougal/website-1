@@ -10,5 +10,7 @@ class CreateTrackMaintainerships < ActiveRecord::Migration[6.1]
 
       t.index %i[track_id user_id], unique: true, name: 'uniq'
     end
+
+    # TODO: import initial maintainers
   end
 end
