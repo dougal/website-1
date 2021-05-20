@@ -42,6 +42,9 @@ class User < ApplicationRecord
   has_many :track_mentorships, dependent: :destroy
   has_many :mentored_tracks, through: :track_mentorships, source: :track
 
+  has_many :maintainerships, class_name: "Track::Maintainership", dependent: :destroy
+  has_many :maintained_tracks, through: :maintainerships, source: :track
+
   # TODO: Validate presence of name
 
   validates :handle, uniqueness: { case_sensitive: false }, handle_format: true

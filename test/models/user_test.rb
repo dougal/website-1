@@ -134,4 +134,18 @@ class UserTest < ActiveSupport::TestCase
     user.update(became_mentor_at: Time.current)
     assert user.mentor?
   end
+
+  test "maintained_tracks" do
+    track_1 = create :track
+    track_2 = create :track, slug: 'csharp'
+    track_3 = create :track, slug: 'elixir'
+    user = create :user
+    create :track_maintainership, maintainer: user, track: track_1
+    create :track_maintainership, maintainer: user, track: track_2
+
+    assert_equal 2, user.maintained_tracks.size
+    assert_includes user.maintained_tracks, track_1
+    assert_includes user.maintained_tracks, track_2
+    refute_includes user.maintained_tracks, track_3
+  end
 end
