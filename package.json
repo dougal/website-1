@@ -2,6 +2,8 @@
   "name": "exercism",
   "private": true,
   "dependencies": {
+    "@bugsnag/js": "^7.10.0",
+    "@bugsnag/plugin-react": "^7.10.0",
     "@exercism/active-background": "^0.6.2",
     "@popperjs/core": "^2.5.2",
     "@rails/actioncable": "^6.0.0",
